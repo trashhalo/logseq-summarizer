@@ -4,6 +4,10 @@ Uses [sumy](https://pypi.org/project/sumy/) to summarize long text in logseq
 
 ![demo](./logseq/demo.gif)
 
+## Alpha
+
+Super WIP!!! May not work
+
 ## Installation
 
 - Download a released version assets from Github.
