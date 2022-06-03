@@ -2,7 +2,7 @@
 
 Uses [sumy](https://pypi.org/project/sumy/) to summarize long text in logseq
 
-![demo](./logseq/demo.gif)
+![demo](./public/demo.gif)
 
 ## Alpha
 
