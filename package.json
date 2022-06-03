@@ -1,10 +1,22 @@
 {
-  "name": "@summarizer/monorepo",
-  "version": "0.0.0",
-  "private": true,
-  "license": "MIT",
-  "workspaces": [
-    "worker",
-    "logseq"
-  ]
+  "name": "logseq-summarizer",
+  "version": "0.0.2",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.9.9",
+    "vite-plugin-compile-time": "^0.1.2"
+  },
+  "dependencies": {
+    "@logseq/libs": "^0.0.6",
+    "promise-worker": "^2.0.1"
+  },
+  "logseq": {
+    "id": "_trashhalo-logseq-summarizer",
+    "icon": "./icon.png"
+  }
 }

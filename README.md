@@ -17,9 +17,8 @@ Super WIP!!! May not work
 ## Development
 
 1. yarn
-2. yarn workspace @summarizer/worker build
-3. yarn workspace @summarizer/logseq build
-4. Load the unpacked plugin
+2. yarn build
+3. Load the unpacked plugin from `dist`
 
 ## Icon
 

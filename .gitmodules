@@ -1,0 +1,3 @@
+[submodule "sumy"]
+	path = sumy
+	url = git@github.com:miso-belica/sumy.git
