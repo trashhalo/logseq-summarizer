@@ -26,8 +26,8 @@ jobs:
           yarn
           yarn build
           mkdir ${{ env.PLUGIN_NAME }}
-          cp README.md logseq/icon.png logseq/demo.gif ${{ env.PLUGIN_NAME }}
-          mv logseq/dist ${{ env.PLUGIN_NAME }}
+          cp README.md ${{ env.PLUGIN_NAME }}
+          mv dist ${{ env.PLUGIN_NAME }}
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
           ls
           echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
@@ -61,6 +61,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./logseq/package.json
+          asset_path: ./package.json
           asset_name: package.json
           asset_content_type: application/json
