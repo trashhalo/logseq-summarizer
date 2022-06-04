@@ -24,6 +24,13 @@ const settingsSchema = [
       "How many sentences do you want to generate when you summarize content?",
     default: 3,
   },
+  {
+    key: "replaceSourceContent",
+    type: "boolean",
+    title: "Replace source content",
+    description: "Should summaries replace source content or be nested?",
+    default: true,
+  },
 ];
 
 let worker;
@@ -43,22 +50,35 @@ async function main() {
 
   logseq.Editor.registerSlashCommand("Summary", async () => {
     try {
-      const { language, numberOfSentences } = logseq.settings;
+      const { language, numberOfSentences, replaceSourceContent } =
+        logseq.settings;
       const { content, uuid } = await logseq.Editor.getCurrentBlock();
       const summary = await worker.postMessage({
         language,
         count: numberOfSentences,
         text: content,
       });
-
-      await logseq.Editor.updateBlock(uuid, summary[0]);
-      await logseq.Editor.insertBatchBlock(
-        uuid,
-        summary.slice(1).map((c) => {
-          return { content: c };
-        }),
-        { sibling: true }
-      );
+      if (replaceSourceContent) {
+        await logseq.Editor.updateBlock(uuid, summary[0]);
+        await logseq.Editor.insertBatchBlock(
+          uuid,
+          summary.slice(1).map((c) => {
+            return { content: c };
+          }),
+          { sibling: true }
+        );
+      } else {
+        await logseq.Editor.insertBatchBlock(
+          uuid,
+          {
+            content: "summary",
+            children: summary.map((c) => {
+              return { content: c };
+            }),
+          },
+          { sibling: false }
+        );
+      }
     } catch (err) {
       showError(err);
     }

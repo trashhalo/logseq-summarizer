@@ -19,6 +19,7 @@ Uses [sumy](https://pypi.org/project/sumy/) to summarize long text in logseq
 
 - `language` to use to interpret the text in blocks
 - `numberOfSentences` how many senetences should be generated during summary
+- `replaceSourceContent` if you prefer to keep the source material set this to false and it will next summaries underneath
 
 ## Development
 
