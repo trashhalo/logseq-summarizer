@@ -1,9 +1,10 @@
-chardet==4.0.0
+breadability==0.1.20
+certifi==2022.5.18.1
+charset_normalizer==2.0.12
+docopt==0.6.2
+idna==3.3
 sumy==0.10.0
 pycountry==18.12.8
 requests==2.27.1
-idna==3.3
+sumy==0.10.0
 urllib3==1.26.9
-charset_normalizer==2.0.12
-certifi==2022.5.18.1
-breadability==0.1.20

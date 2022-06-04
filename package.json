@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "(rm public/wheels/*.whl || true)",
+    "pip": "python3 -m pip wheel -r requirements.txt -w public/wheels --no-deps",
+    "install": "yarn clean && yarn pip"
   },
   "devDependencies": {
-    "vite": "^2.9.9",
-    "vite-plugin-compile-time": "^0.1.2"
+    "vite": "^2.9.9"
   },
   "dependencies": {
     "@logseq/libs": "^0.0.6",
