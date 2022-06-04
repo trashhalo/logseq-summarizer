@@ -4,15 +4,21 @@ Uses [sumy](https://pypi.org/project/sumy/) to summarize long text in logseq
 
 ![demo](./public/demo.gif)
 
-## Alpha
-
-Super WIP!!! May not work
-
 ## Installation
 
 - Download a released version assets from Github.
 - Unzip it.
 - Click Load unpacked plugin, and select destination directory to the unzipped folder.
+
+## Usage
+
+- Paste a big block of text into a block. News articles, blog posts, etc
+- In the block type /Summary
+
+## Configuration
+
+- `language` to use to interpret the text in blocks
+- `numberOfSentences` how many senetences should be generated during summary
 
 ## Development
 
